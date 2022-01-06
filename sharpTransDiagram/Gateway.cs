@@ -27,7 +27,7 @@ namespace WebApp.Domain.Models
         }
    
         public virtual bool GetTargetObjectAndUpdate(int targetId, double quantity)
-        { var targetList = theDummy.GetList<Target>("Item");
+        { var targetList = theDummy.GetList<Target>(Type);
 
            int index= targetList.FindIndex(t=> t.GetTargetId()== targetId);
             targetList[index].Update(quantity, Attribute);
