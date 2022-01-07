@@ -11,25 +11,25 @@ namespace sharpTransDiagram
         static DummyData myDumy;
         static void Main(string[] args)
         {
-            DummyData  myDumy = new DummyData();
+            DummyData myDumy = new DummyData();
+
             Item myItem = new Item { Id = 1, OnHand = 0, OnPO = 0 };
             myDumy.Items.Add(myItem);
 
             PO myPO = new PO();
             myPO.Date = DateTime.Now;
             myPO.Id = 1;
-            myPO.ChildrenGateway.theDummy = myDumy;
-            StockHubTrans sht1 = new StockHubTrans
-            { Id = 1, Direction = true, Gateway = myPO.ChildrenGateway, TargetId = 1, Quantity = 2, Price = 2 };
 
+            StockHubTrans sht1 = new StockHubTrans("OnPO")
+            { Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 2, theDummy = myDumy };
+            myPO.Total += sht1.GetAmount();
+            AccountTrans act1 = new AccountTrans("Customers", "OnPO") { Id = 1, Direction = true, TargetId = 1, Quantity = myPO.Total, theDummy = myDumy };
 
-            myPO.leafTransList.Add(sht1);
-            
+            myPO.leaf`List.Add(sht1);
+            myPO.leafTransList.Add(act1);
+
             myPO.Post();
             System.Diagnostics.Debug.Assert(myItem.OnPO == 2);
-
-
-
-       }
+        }
     }
 }

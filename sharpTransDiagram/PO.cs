@@ -13,12 +13,10 @@ namespace WebApp.Domain.Models.CompundTransactions
     {
         public int HubId { get; set; }
 
-
         public PO()
         {
-            this.CustomerGateway = new HubCusOnPoGateway(HubId);
-            this.ChildrenGateway = new HubOnPoGateway(HubId);
- 
+
+
         }
         public override bool Post()
         {

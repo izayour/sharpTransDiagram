@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace WebApp.Domain.Models.Transactions
 {
-    public class StockTrans:Transaction
+    public class StockTrans : Transaction
     {
+        public StockTrans(string Attribute) : base("Items", Attribute)
+        {
+        }
+
         public int Price { get; set; }
         public double GetAmount()
         {

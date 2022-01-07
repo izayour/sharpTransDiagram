@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,25 +17,48 @@ namespace WebApp.Domain.Models
         public double Quantity { get; set; } = 0;
 
         [NotMapped]
-        public Gateway Gateway { get; set; }
+        //public Gateway Gateway { get; set; }
         public int TargetId { get; set; }
         [MaxLength(20)]
         public string Unit { get; set; }
+        public string TargetType { get; set; }
+        public string TargetAttribute { get; set; }
+
     }
     public partial class Transaction
     {
+        public DummyData theDummy { get; set; }
+        public Transaction(string TargetType, string TargetAttribute)
+        {
+            this.TargetType = TargetType;
+            this.TargetAttribute = TargetAttribute;
+        }
+
         public virtual bool Post()
         {
             if (!Direction)
                 Quantity = -Quantity;
-            return this.Gateway.GetTargetObjectAndUpdate(TargetId, Quantity);
+            update(Quantity, TargetType, TargetAttribute, TargetId);
+
+            return true;
 
         }
+
+        private void update(double quantity, string targetType, string targetAttribute, int targetId)
+        {
+            var targetList = theDummy.GetList<Target>(targetType);
+
+            int index = targetList.FindIndex(t => t.GetTargetId() == targetId);
+            targetList[index].Update(quantity, targetAttribute);
+
+        }
+
+
         public void UnPost()
         {
             if (Direction)//true for income 
                 Quantity = -Quantity;
-            this.Gateway.GetTargetObjectAndUpdate(TargetId, Quantity);
+            //this.Gateway.GetTargetObjectAndUpdate(TargetId, Quantity);
 
         }
 
