@@ -9,7 +9,7 @@ namespace WebApp.Domain.Models
         public int Id { get; set; }
 
         public double OnSO { get; set; } = 0;
-        public double OnPO { get; set; } = 0;
+        public double Balance { get; set; } = 0;
     }
 
     public partial class Customer : Target

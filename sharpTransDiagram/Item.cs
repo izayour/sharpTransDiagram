@@ -12,6 +12,7 @@ namespace WebApp.Domain.Models
         public Hub Hub { get; set; }
         public int OnHand { get; set; } = 0;
         public int OnPO { get; set; } = 0;
+        public int OnSO { get; set; } = 0;
     }
 
     public partial class Item : Target

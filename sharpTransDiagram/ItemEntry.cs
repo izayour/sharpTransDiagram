@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace WebApp.Domain.Models
+﻿namespace WebApp.Domain.Models
 {
     public class ItemEntry
     {
