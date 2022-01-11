@@ -32,13 +32,12 @@ namespace WebApp.Domain.Models
 
                 int value = (int)this.GetType().GetProperty(attribute).GetValue(this);
 
-                if (quantity > 0 || (int)value >= (int)Math.Abs(quantity))
-                {
-                    this.GetType().GetProperty(attribute).SetValue(this, value + (int)quantity);
-                    Console.WriteLine("Item (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
 
-                    return true;
-                }
+                this.GetType().GetProperty(attribute).SetValue(this, value + (int)quantity);
+                Console.WriteLine("Item (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+
+                return true;
+
 
             }
             return false;

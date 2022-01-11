@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,6 +28,7 @@ namespace WebApp.Domain.Models
         //public String AccountAttribute { get; set; }
         public Double Total { get; set; } = 0;
         public List<Transaction> leafTransList = new List<Transaction>();
+        public DummyData theDummy { get; set; }
     }
     public partial class CompoundTransaction
     {

@@ -11,7 +11,7 @@ namespace WebApp.Domain.Models.Transactions
         {
         }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
         public double GetAmount()
         {
             return this.Quantity * Price;

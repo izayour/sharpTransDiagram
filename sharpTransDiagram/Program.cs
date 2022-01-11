@@ -19,14 +19,19 @@ namespace sharpTransDiagram
             PO myPO = new PO();
             myPO.Date = DateTime.Now;
             myPO.Id = 1;
+            myPO.theDummy = myDumy;
+            myPO.createTransForItem(myItem.Id,1, 2, 10);
 
-            StockHubTrans sht1 = new StockHubTrans("OnPO")
-            { Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 2, theDummy = myDumy };
-            myPO.Total += sht1.GetAmount();
-            AccountTrans act1 = new AccountTrans("Customers", "OnPO") { Id = 1, Direction = true, TargetId = 1, Quantity = myPO.Total, theDummy = myDumy };
+            //StockHubTrans sht1 = new StockHubTrans("OnPO")
+            //{ Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 2, theDummy = myDumy };
+            //myPO.Total += sht1.GetAmount();
+            //StockHubTrans sht2 = new StockHubTrans("OnHand")
+            //{ Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 3, theDummy = myDumy };
+            //AccountTrans act1 = new AccountTrans("Customers", "OnPO") { Id = 1, Direction = true, TargetId = 1, Quantity = myPO.Total, theDummy = myDumy };
 
-            myPO.leaf`List.Add(sht1);
-            myPO.leafTransList.Add(act1);
+            //myPO.leafTransList.Add(sht1);
+            //myPO.leafTransList.Add(sht2);
+            //myPO.leafTransList.Add(act1);
 
             myPO.Post();
             System.Diagnostics.Debug.Assert(myItem.OnPO == 2);

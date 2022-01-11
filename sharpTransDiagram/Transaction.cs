@@ -36,6 +36,7 @@ namespace WebApp.Domain.Models
 
         public virtual bool Post()
         {
+            double qty;
             if (!Direction)
                 Quantity = -Quantity;
             update(Quantity, TargetType, TargetAttribute, TargetId);

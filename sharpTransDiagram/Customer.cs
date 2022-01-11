@@ -13,7 +13,7 @@ namespace WebApp.Domain.Models
         public double OnSO { get; set; } = 0;
         public double OnPO { get; set; } = 0;
 
-        
+
     }
     public partial class Customer : Target
     {
@@ -31,14 +31,13 @@ namespace WebApp.Domain.Models
             if (this.GetType().GetProperty(attribute) != null)
             {
                 double value = (double)this.GetType().GetProperty(attribute).GetValue(this);
-                if (quantity > 0 || (double)value >= Math.Abs(quantity))
-                {
-                    this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
-                    Console.WriteLine("Customer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+                this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
-                    return true;
-                }
+                Console.WriteLine("Customer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+
+                return true;
+
             }
             return false;
         }
