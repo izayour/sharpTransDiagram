@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
 
 namespace WebApp.Domain.Models
 {
@@ -11,13 +7,13 @@ namespace WebApp.Domain.Models
     {
         [Key]
         public int Id { get; set; }
+
         public int HubId { get; set; }
         public Hub Hub { get; set; }
         public int OnHand { get; set; } = 0;
         public int OnPO { get; set; } = 0;
-
-
     }
+
     public partial class Item : Target
     {
         public override int GetTargetId()
@@ -29,16 +25,12 @@ namespace WebApp.Domain.Models
         {
             if (this.GetType().GetProperty(attribute) != null)
             {
-
                 int value = (int)this.GetType().GetProperty(attribute).GetValue(this);
-
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + (int)quantity);
                 Console.WriteLine("Item (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
 
                 return true;
-
-
             }
             return false;
         }

@@ -1,8 +1,5 @@
-﻿ 
-
-namespace WebApp.Domain.Models
+﻿namespace WebApp.Domain.Models
 {
-
     public abstract partial class Target
     {
         /// <summary>
@@ -10,6 +7,7 @@ namespace WebApp.Domain.Models
         /// </summary>
         /// <returns></returns>
         public abstract int GetTargetId();
+
         /// <summary>
         /// Updates Target Attrtibutes
         /// </summary>
@@ -17,6 +15,7 @@ namespace WebApp.Domain.Models
         /// <param name="attribute"></param>
         /// <returns></returns>
         internal abstract bool Update(double quantity, string attribute);
+
         /// <summary>
         /// Prints the Target data
         /// </summary>

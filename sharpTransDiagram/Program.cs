@@ -2,14 +2,12 @@
 using System;
 using WebApp.Domain.Models;
 using WebApp.Domain.Models.CompundTransactions;
-using WebApp.Domain.Models.Transactions;
 
 namespace sharpTransDiagram
 {
-    class Program
+    internal class Program
     {
-        static DummyData myDumy;
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DummyData myDumy = new DummyData();
 
@@ -19,19 +17,10 @@ namespace sharpTransDiagram
             PO myPO = new PO();
             myPO.Date = DateTime.Now;
             myPO.Id = 1;
+            myPO.TargetId = 1;
             myPO.theDummy = myDumy;
-            myPO.createTransForItem(myItem.Id,1, 2, 10);
-
-            //StockHubTrans sht1 = new StockHubTrans("OnPO")
-            //{ Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 2, theDummy = myDumy };
-            //myPO.Total += sht1.GetAmount();
-            //StockHubTrans sht2 = new StockHubTrans("OnHand")
-            //{ Id = 1, Direction = true, TargetId = 1, Quantity = 2, Price = 3, theDummy = myDumy };
-            //AccountTrans act1 = new AccountTrans("Customers", "OnPO") { Id = 1, Direction = true, TargetId = 1, Quantity = myPO.Total, theDummy = myDumy };
-
-            //myPO.leafTransList.Add(sht1);
-            //myPO.leafTransList.Add(sht2);
-            //myPO.leafTransList.Add(act1);
+            myPO.CreateTransForItem(myItem.Id, 2, 10);
+            myPO.CreateAccountTransaction();
 
             myPO.Post();
             System.Diagnostics.Debug.Assert(myItem.OnPO == 2);
