@@ -1,8 +1,10 @@
-﻿namespace WebApp.Domain.Models.Transactions
+﻿using sharpTransDiagram;
+
+namespace WebApp.Domain.Models.Transactions
 {
     public class StockTrans : Transaction
     {
-        public StockTrans(string Attribute) : base("Items", Attribute)
+        public StockTrans(string Attribute) : base(Constants.Item, Attribute)
         {
         }
 

@@ -2,10 +2,10 @@
 {
     public class StockHubTrans : StockTrans
     {
+        public int HubId { get; set; }
+
         public StockHubTrans(string StockAttribute) : base(StockAttribute)
         {
         }
-
-        public int HubId { get; set; }
     }
 }
