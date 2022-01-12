@@ -1,4 +1,4 @@
-﻿namespace WebApp.Domain.Models.Transactions
+﻿namespace sharpTransDiagram.Models.Transactions
 {
     public class StockHubTrans : StockTrans
     {

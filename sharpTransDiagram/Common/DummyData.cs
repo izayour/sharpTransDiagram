@@ -1,9 +1,9 @@
 ﻿using sharpTransDiagram;
 using System;
 using System.Collections.Generic;
-using WebApp.Domain.Models;
+using sharpTransDiagram.Models;
 
-namespace ConsoleApp1
+namespace sharpTransDiagram.Common
 {
     public class DummyData
     {
@@ -33,11 +33,12 @@ namespace ConsoleApp1
 
         public List<T> GetList<T>(string listName)
         {
-            try
+            var prop = this.GetType().GetProperty(listName);
+            if (prop != null)
             {
-                return (List<T>)this.GetType().GetProperty(listName).GetValue(this);
+                return (List<T>)prop.GetValue(this);
             }
-            catch (Exception)
+            else
             {
                 throw new Exception("Data Not Found ");
             }

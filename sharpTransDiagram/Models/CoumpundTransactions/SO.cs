@@ -1,5 +1,6 @@
-﻿using WebApp.Domain.Models;
-using WebApp.Domain.Models.Transactions;
+﻿using sharpTransDiagram.Common;
+using sharpTransDiagram.Models;
+using sharpTransDiagram.Models.Transactions;
 
 namespace sharpTransDiagram
 {
@@ -23,12 +24,6 @@ namespace sharpTransDiagram
         {
             AccountTrans act1 = new AccountTrans(Constants.Customer, Constants.OnSo) { Id = 1, Direction = true, TargetId = this.TargetId, Quantity = this.Total, TheDummy = this.TheDummy };
             LeafTransList.Add(act1);
-        }
-
-        public override bool Post()
-        {
-            this.LeafTransList.ForEach(aLeaf => aLeaf.Post());
-            return true;
         }
 
         //public void Ship()

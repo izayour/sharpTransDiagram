@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram.Models
 {
     public partial class Item : Target
     {
@@ -22,18 +22,20 @@ namespace WebApp.Domain.Models
             return this.Id;
         }
 
-        internal override bool Update(double quantity, string attribute)
+        public override void Update(double quantity, string attribute)
         {
-            if (this.GetType().GetProperty(attribute) != null)
+            var prop = this.GetType().GetProperty(attribute);
+            if (prop != null)
             {
-                int value = (int)this.GetType().GetProperty(attribute).GetValue(this);
+                int value = (int)prop.GetValue(this);
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + (int)quantity);
                 Console.WriteLine("Item (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
-
-                return true;
             }
-            return false;
+            else
+            {
+                throw new Exception("properity " + attribute + " not found in class" + this.GetType().Name);
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace sharpTransDiagram
+﻿namespace sharpTransDiagram.Common
 {
     public class Constants
     {

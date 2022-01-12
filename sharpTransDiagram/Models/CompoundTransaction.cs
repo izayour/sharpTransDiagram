@@ -1,10 +1,10 @@
-﻿using ConsoleApp1;
+﻿using sharpTransDiagram.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram.Models
 {
     public partial class CompoundTransaction
     {
@@ -14,13 +14,9 @@ namespace WebApp.Domain.Models
         public DateTime Date { get; set; } = new();
         public bool Direction { get; set; }
         public int TargetId { get; set; }
-        public List<ItemEntry> Entries { get; set; }
-        public List<Transaction> LeafTransactions { get; set; } = new();
-
-        [NotMapped]
         public Double Total { get; set; } = 0;
 
-        public List<Transaction> LeafTransList = new();
+        public List<Transaction> LeafTransList { get; set; } = new();
         public DummyData TheDummy { get; set; }
 
         public Transaction Transaction
@@ -34,20 +30,14 @@ namespace WebApp.Domain.Models
 
     public partial class CompoundTransaction
     {
-        public CompoundTransaction()
-        {
-        }
-
-        public virtual bool Post()
+        public virtual void Post()
         {
             this.LeafTransList.ForEach(lt => lt.Post());
-            return true;
         }
 
-        public virtual bool UnPost()
+        public virtual void UnPost()
         {
             this.LeafTransList.ForEach(lt => lt.UnPost());
-            return true;
         }
 
         public double ReturnTotalPost()

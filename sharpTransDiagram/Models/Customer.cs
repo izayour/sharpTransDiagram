@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram.Models
 {
     public partial class Customer : Target
     {
@@ -27,24 +27,21 @@ namespace WebApp.Domain.Models
             return this.Id;
         }
 
-        internal override bool Update(double quantity, string attribute)
+        public override void Update(double quantity, string attribute)
         {
-            if (string.IsNullOrWhiteSpace(attribute))
+            var prop = this.GetType().GetProperty(attribute);
+            if (prop != null)
             {
-                throw new ArgumentException($"'{nameof(attribute)}' cannot be null or whitespace.", nameof(attribute));
-            }
-
-            if (this.GetType().GetProperty(attribute) != null)
-            {
-                double value = (double)this.GetType().GetProperty(attribute).GetValue(this);
+                double value = (double)prop.GetValue(this);
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
                 Console.WriteLine("Customer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
-
-                return true;
             }
-            return false;
+            else
+            {
+                throw new Exception("properity " + attribute + " not found in class" + this.GetType().Name);
+            }
         }
     }
 }
