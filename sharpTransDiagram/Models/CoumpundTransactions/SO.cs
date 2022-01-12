@@ -8,6 +8,10 @@ namespace sharpTransDiagram
     {
         public int HubId { get; set; }
 
+        public SO(DummyData theDummy) : base(theDummy)
+        {
+        }
+
         public void CreateTransForItem(int itemId, int Qty, double price)
         {
             StockHubTrans sht1 = new StockHubTrans(Constants.OnSo)

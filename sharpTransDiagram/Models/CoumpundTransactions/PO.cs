@@ -21,6 +21,10 @@ namespace sharpTransDiagram.Models.CompundTransactions
             //this.leafTransList.Add(sht2);
         }
 
+        public PO(DummyData theDummy) : base(theDummy)
+        {
+        }
+
         public void CreateAccountTransaction()
         {
             AccountTrans act1 = new AccountTrans(Constants.Vendor, Constants.OnPo) { Id = 1, Direction = true, TargetId = this.TargetId, Quantity = this.Total, TheDummy = this.TheDummy };

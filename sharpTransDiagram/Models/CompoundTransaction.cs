@@ -17,11 +17,16 @@ namespace sharpTransDiagram.Models
         public Double Total { get; set; } = 0;
 
         public List<Transaction> LeafTransList { get; set; } = new();
-        public DummyData TheDummy { get; set; }
+        public DummyData TheDummy;
     }
 
     public partial class CompoundTransaction
     {
+        public CompoundTransaction(DummyData theDummy)
+        {
+            this.TheDummy = theDummy;
+        }
+
         public virtual void Post()
         {
             this.LeafTransList.ForEach(lt => lt.Post());
