@@ -30,7 +30,7 @@ namespace sharpTransDiagram
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
-                Console.WriteLine("Vendor (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+                Console.WriteLine("\tVendor (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
             }
             else
             {

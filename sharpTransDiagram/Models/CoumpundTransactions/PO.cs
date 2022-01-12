@@ -9,20 +9,20 @@ namespace sharpTransDiagram.Models.CompundTransactions
     {
         public int HubId { get; set; }
 
-        public void CreateTransForItem(int itemId, int Qty, double price)
-        {
-            StockHubTrans sht1 = new StockHubTrans(Constants.OnPo)
-            { Id = 1, HubId = this.HubId, Direction = true, TargetId = itemId, Quantity = Qty, Price = price, TheDummy = this.TheDummy };
-            //StockHubTrans sht2 = new StockHubTrans(Constants.OnHand)
-            //{ Id = 2, Direction = false, HubId = this.HubId, TargetId = itemId, Quantity = Qty, Price = price, TheDummy = this.TheDummy };
-            this.Total += sht1.GetAmount();
-
-            this.LeafTransList.Add(sht1);
-            //this.leafTransList.Add(sht2);
-        }
-
         public PO(DummyData theDummy) : base(theDummy)
         {
+        }
+
+        public void CreateTransForItem(List<ItemEntry> itemEntries)
+        {
+            itemEntries.ForEach(e =>
+            {
+                StockHubTrans sht1 = new StockHubTrans(Constants.OnPo)
+                { Id = 1, HubId = this.HubId, Direction = true, TargetId = e.ItemId, Quantity = e.Qty, Price = e.Price, TheDummy = this.TheDummy };
+                this.Total += sht1.GetAmount();
+
+                this.LeafTransList.Add(sht1);
+            });
         }
 
         public void CreateAccountTransaction()

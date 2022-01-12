@@ -1,6 +1,7 @@
 ﻿using sharpTransDiagram.Common;
 using sharpTransDiagram.Models;
 using sharpTransDiagram.Models.Transactions;
+using System.Collections.Generic;
 
 namespace sharpTransDiagram
 {
@@ -12,16 +13,17 @@ namespace sharpTransDiagram
         {
         }
 
-        public void CreateTransForItem(int itemId, int Qty, double price)
+        public void CreateTransForItem(List<ItemEntry> itemEntries)
         {
-            StockHubTrans sht1 = new StockHubTrans(Constants.OnSo)
-            { Id = 1, HubId = this.HubId, Direction = true, TargetId = itemId, Quantity = Qty, Price = price, TheDummy = this.TheDummy };
-            //StockHubTrans sht2 = new StockHubTrans(Constants.OnHand)
-            //{ Id = 2, Direction = true, HubId = this.HubId, TargetId = itemId, Quantity = Qty, Price = price, TheDummy = this.TheDummy };
-            this.Total += sht1.GetAmount();
+            itemEntries.ForEach(e =>
+            {
+                StockHubTrans sht1 = new StockHubTrans(Constants.OnSo)
+                { Id = 1, HubId = this.HubId, Direction = true, TargetId = e.ItemId, Quantity = e.Qty, Price = e.Price, TheDummy = this.TheDummy };
 
-            this.LeafTransList.Add(sht1);
-            //this.leafTransList.Add(sht2);
+                this.Total += sht1.GetAmount();
+
+                this.LeafTransList.Add(sht1);
+            });
         }
 
         public void CreateAccountTransaction()

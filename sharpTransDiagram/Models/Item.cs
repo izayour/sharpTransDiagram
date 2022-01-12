@@ -30,7 +30,7 @@ namespace sharpTransDiagram.Models
                 int value = (int)prop.GetValue(this);
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + (int)quantity);
-                Console.WriteLine("Item (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+                Console.WriteLine("\tItem (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
             }
             else
             {

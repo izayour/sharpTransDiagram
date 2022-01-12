@@ -2,6 +2,7 @@
 using sharpTransDiagram.Models;
 using sharpTransDiagram.Models.CompundTransactions;
 using sharpTransDiagram.Common;
+using System.Collections.Generic;
 
 namespace sharpTransDiagram
 {
@@ -10,9 +11,9 @@ namespace sharpTransDiagram
         private static void Main(string[] args)
         {
             DummyData myDummy = new();
-
-            Item myItem = new Item { Id = 1, HubId = 1, OnHand = 0, OnPO = 0 };
-            myDummy.Items.Add(myItem);
+            List<ItemEntry> itemEntries = new();
+            itemEntries.Add(new() { Id = 1, ItemId = 1, Price = 10, Qty = 1 });
+            itemEntries.Add(new() { Id = 2, ItemId = 2, Price = 20, Qty = 1 });
 
             PO myPO = new PO(myDummy)
             {
@@ -22,7 +23,7 @@ namespace sharpTransDiagram
                 HubId = 1
             };
 
-            myPO.CreateTransForItem(myItem.Id, 2, 10);
+            myPO.CreateTransForItem(itemEntries);
             myPO.CreateAccountTransaction();
 
             Console.WriteLine("Posting PO\n");
@@ -42,7 +43,7 @@ namespace sharpTransDiagram
                 TargetId = 1,
                 HubId = 1
             };
-            mySO.CreateTransForItem(myItem.Id, 2, 10);
+            mySO.CreateTransForItem(itemEntries);
             mySO.CreateAccountTransaction();
 
             Console.WriteLine("Posting SO\n");

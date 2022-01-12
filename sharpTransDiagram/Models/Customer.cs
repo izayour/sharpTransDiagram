@@ -28,7 +28,7 @@ namespace sharpTransDiagram.Models
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
-                Console.WriteLine("Customer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+                Console.WriteLine("\tCustomer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
             }
             else
             {

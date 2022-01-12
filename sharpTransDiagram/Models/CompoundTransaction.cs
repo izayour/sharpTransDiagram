@@ -12,7 +12,6 @@ namespace sharpTransDiagram.Models
         public int Id { get; set; }
 
         public DateTime Date { get; set; } = new();
-        public bool Direction { get; set; }
         public int TargetId { get; set; }
         public Double Total { get; set; } = 0;
 
