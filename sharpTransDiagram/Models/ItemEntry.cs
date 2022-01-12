@@ -1,4 +1,4 @@
-﻿namespace WebApp.Domain.Models
+﻿namespace sharpTransDiagram.Models
 {
     public class ItemEntry
     {

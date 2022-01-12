@@ -1,8 +1,9 @@
 ﻿using sharpTransDiagram;
 using System.Collections.Generic;
-using WebApp.Domain.Models.Transactions;
+using sharpTransDiagram.Models.Transactions;
+using sharpTransDiagram.Common;
 
-namespace WebApp.Domain.Models.CompundTransactions
+namespace sharpTransDiagram.Models.CompundTransactions
 {
     public class PO : CompoundTransaction
     {

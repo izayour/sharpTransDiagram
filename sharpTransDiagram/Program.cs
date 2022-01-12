@@ -1,7 +1,8 @@
-﻿using ConsoleApp1;
+﻿using sharpTransDiagram;
 using System;
-using WebApp.Domain.Models;
-using WebApp.Domain.Models.CompundTransactions;
+using sharpTransDiagram.Models;
+using sharpTransDiagram.Models.CompundTransactions;
+using sharpTransDiagram.Common;
 
 namespace sharpTransDiagram
 {
@@ -31,15 +32,20 @@ namespace sharpTransDiagram
             mySO.TheDummy = myDumy;
             mySO.CreateTransForItem(myItem.Id, 2, 10);
             mySO.CreateAccountTransaction();
-
+            Console.WriteLine("Posting PO\n");
             myPO.Post();
+            Console.WriteLine("UnPosting PO\n");
+
             myPO.UnPost();
 
             //System.Diagnostics.Debug.Assert(myItem.OnPO == 2);
 
             Console.WriteLine("****************************************************************\n");
+            Console.WriteLine("Posting SO\n");
 
             mySO.Post();
+            Console.WriteLine("UnPosting SO\n");
+
             mySO.UnPost();
         }
     }

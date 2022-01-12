@@ -1,9 +1,9 @@
-﻿using ConsoleApp1;
+﻿using sharpTransDiagram.Common;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram.Models
 {
     public partial class Transaction
     {
@@ -13,13 +13,8 @@ namespace WebApp.Domain.Models
         public DateTime Date { get; set; } = new DateTime();
         public virtual bool Direction { get; set; } = true;
         public double Quantity { get; set; } = 0;
-
-        [NotMapped]
         public int TargetId { get; set; }
-
-        [MaxLength(20)]
         public string Unit { get; set; }
-
         public string TargetType { get; set; }
         public string TargetAttribute { get; set; }
     }
@@ -34,14 +29,16 @@ namespace WebApp.Domain.Models
             this.TargetAttribute = TargetAttribute;
         }
 
-        public virtual bool Post()
+        public virtual void Post()
         {
             if (Direction)
+            {
                 UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
+            }
             else
+            {
                 UpdateTarget(-Quantity, TargetType, TargetAttribute, TargetId);
-
-            return true;
+            }
         }
 
         private void UpdateTarget(double quantity, string targetType, string targetAttribute, int targetId)
@@ -55,9 +52,13 @@ namespace WebApp.Domain.Models
         public void UnPost()
         {
             if (!Direction)
+            {
                 UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
+            }
             else
+            {
                 UpdateTarget(-Quantity, TargetType, TargetAttribute, TargetId);
+            }
         }
     }
 }

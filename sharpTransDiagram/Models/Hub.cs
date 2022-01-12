@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram.Models
 {
     public class Hub
     {
