@@ -10,6 +10,14 @@ namespace WebApp.Domain.Models
 
         public double OnSO { get; set; } = 0;
         public double Balance { get; set; } = 0;
+
+        public sharpTransDiagram.shippingLocations shippingLocations
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
     public partial class Customer : Target

@@ -17,7 +17,7 @@ namespace sharpTransDiagram
             PO myPO = new PO();
             myPO.Date = DateTime.Now;
             myPO.Id = 1;
-            myPO.TargetId = 1;
+            myPO.TargetId = 1;  //vendor
             myPO.HubId = 1;
             myPO.TheDummy = myDumy;
             myPO.CreateTransForItem(myItem.Id, 2, 10);

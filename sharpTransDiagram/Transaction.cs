@@ -22,6 +22,14 @@ namespace WebApp.Domain.Models
 
         public string TargetType { get; set; }
         public string TargetAttribute { get; set; }
+
+        public Target Target
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
     public partial class Transaction

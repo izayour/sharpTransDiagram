@@ -1,129 +1,142 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="WebApp.Domain.Models.Transactions.AccountTrans" Collapsed="true">
-    <Position X="11" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AccountTrans.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WebApp.Domain.Models.CompoundTransaction" Collapsed="true">
-    <Position X="7.25" Y="8" Width="1.5" />
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Transaction" Type="WebApp.Domain.Models.Transaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.75" Y="4.809" />
+        <Point X="7.75" Y="4.809" />
+        <Point X="7.75" Y="5.062" />
+        <Point X="11.562" Y="5.062" />
+        <Point X="11.562" Y="4.812" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAACAAACAAAAAgCEAAQAABAAAAAggBIAA=</HashCode>
+      <HashCode>AACCAAgAAAAAACAAACAAAAAACEAAQgABAAAgAAgBAAA=</HashCode>
       <FileName>CompoundTransaction.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Transaction" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="WebApp.Domain.Models.Gateway">
-    <Position X="3" Y="1.75" Width="2.25" />
+  <Class Name="WebApp.Domain.Models.Customer" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <AssociationLine Name="shippingLocations" Type="sharpTransDiagram.shippingLocations">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.331" Y="0.109" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACCAAAAAQAAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Gateway.cs</FileName>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="shippingLocations" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="WebApp.Domain.Models.Hub" Collapsed="true">
-    <Position X="13.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Hub.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.Item">
-    <Position X="1" Y="9.25" Width="1.5" />
+  <Class Name="WebApp.Domain.Models.Item" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAQCAAAAAAAAAAAAAAAAABABAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApp.Domain.Models.ItemEntry" Collapsed="true">
-    <Position X="13.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAQAAAAAAgAAAAAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ItemEntry.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.keyAttribute" Collapsed="true">
-    <Position X="13.25" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>keyAttribute.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WebApp.Domain.Models.Target" Collapsed="true">
-    <Position X="2.25" Y="8" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Target.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebApp.Domain.Models.Transaction" Collapsed="true">
-    <Position X="8.75" Y="1.25" Width="1.5" />
+    <Position X="11.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAICAAIAAACAAAAgABAAAAgAABAAA=</HashCode>
+      <HashCode>AAACAQgAAAAAAAAAICAACCAACAAAAgABAAAAgAABAAA=</HashCode>
       <FileName>Transaction.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Target" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="WebApp.Domain.Models.Customer" Collapsed="true">
-    <Position X="3.25" Y="9.25" Width="1.5" />
+  <Class Name="sharpTransDiagram.SO" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQCAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Customer.cs</FileName>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>SO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApp.Domain.Models.CompundTransactions.PO">
-    <Position X="8.25" Y="9.25" Width="1.5" />
+  <Class Name="sharpTransDiagram.Vendor">
+    <Position X="4.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vendor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApp.Domain.Models.CompundTransactions.PO" Collapsed="true">
+    <Position X="2.5" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>PO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApp.Domain.Models.Gateways.HubGateway" Collapsed="true">
-    <Position X="4.5" Y="5.25" Width="1.5" />
+  <Class Name="WebApp.Domain.Models.Transactions.StockHubTrans" Collapsed="true">
+    <Position X="11.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
-      <FileName>HubGateway.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.Gateways.HubOnHandGateway" Collapsed="true">
-    <Position X="8" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HubOnHandGateway.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.Gateways.HubOnPoGateway" Collapsed="true">
-    <Position X="1.25" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HubOnPoGateway.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.Gateways.HubOnSOGateway" Collapsed="true">
-    <Position X="3.5" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HubOnSOGateway.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WebApp.Domain.Models.Gateways.HubCusOnPoGateway" Collapsed="true">
-    <Position X="5.75" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HubCusOnPoGateway.cs</FileName>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>StockHubTrans.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebApp.Domain.Models.Transactions.StockTrans" Collapsed="true">
-    <Position X="8" Y="2.75" Width="1.5" />
+    <Position X="11.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StockTrans.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApp.Domain.Models.Transactions.StockHubTrans" Collapsed="true">
-    <Position X="8.25" Y="4" Width="1.5" />
+  <Class Name="sharpTransDiagram.Serilaized">
+    <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
-      <FileName>StockHubTrans.cs</FileName>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serilaized.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Hub" />
+      <Property Name="Serial" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="sharpTransDiagram.NonSerialized" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NonSerialized.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApp.Domain.Models.Hub" Collapsed="true">
+    <Position X="11" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Serial" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApp.Domain.Models.Transactions.AccountTrans" Collapsed="true">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccountTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.shippingLocations">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>shippingLocations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

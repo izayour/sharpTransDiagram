@@ -22,6 +22,14 @@ namespace WebApp.Domain.Models
 
         public List<Transaction> LeafTransList = new();
         public DummyData TheDummy { get; set; }
+
+        public Transaction Transaction
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
     public partial class CompoundTransaction
