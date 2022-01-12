@@ -1,18 +1,20 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WebApp.Domain.Models;
 
-namespace WebApp.Domain.Models
+namespace sharpTransDiagram
 {
-    public partial class Customer : Target
+    public partial class Vendor : Target
     {
-        [Key]
         public int Id { get; set; }
-
-        public double OnSO { get; set; } = 0;
+        public double OnPO { get; set; } = 0;
         public double Balance { get; set; } = 0;
     }
 
-    public partial class Customer : Target
+    public partial class Vendor : Target
     {
         public override int GetTargetId()
         {
@@ -32,7 +34,7 @@ namespace WebApp.Domain.Models
 
                 this.GetType().GetProperty(attribute).SetValue(this, value + quantity);
 
-                Console.WriteLine("Customer (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
+                Console.WriteLine("Vendor (" + Id + ") : " + this.GetType().GetProperty(attribute).Name + " updated " + value + " -> " + this.GetType().GetProperty(attribute).GetValue(this).ToString() + "\n");
 
                 return true;
             }

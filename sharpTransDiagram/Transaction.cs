@@ -26,7 +26,7 @@ namespace WebApp.Domain.Models
 
     public partial class Transaction
     {
-        public DummyData theDummy { get; set; }
+        public DummyData TheDummy { get; set; }
 
         public Transaction(string TargetType, string TargetAttribute)
         {
@@ -36,17 +36,17 @@ namespace WebApp.Domain.Models
 
         public virtual bool Post()
         {
-            double qty;
-            if (!Direction)
-                Quantity = -Quantity;
-            update(Quantity, TargetType, TargetAttribute, TargetId);
+            if (Direction)
+                UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
+            else
+                UpdateTarget(-Quantity, TargetType, TargetAttribute, TargetId);
 
             return true;
         }
 
-        private void update(double quantity, string targetType, string targetAttribute, int targetId)
+        private void UpdateTarget(double quantity, string targetType, string targetAttribute, int targetId)
         {
-            var targetList = theDummy.GetList<Target>(targetType);
+            var targetList = TheDummy.GetList<Target>(targetType);
 
             int index = targetList.FindIndex(t => t.GetTargetId() == targetId);
             targetList[index].Update(quantity, targetAttribute);
@@ -54,9 +54,10 @@ namespace WebApp.Domain.Models
 
         public void UnPost()
         {
-            if (Direction)//true for income
-                Quantity = -Quantity;
-            //this.Gateway.GetTargetObjectAndUpdate(TargetId, Quantity);
+            if (!Direction)
+                UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
+            else
+                UpdateTarget(-Quantity, TargetType, TargetAttribute, TargetId);
         }
     }
 }
