@@ -1,14 +1,14 @@
-﻿using sharpTransDiagram;
+﻿using sharpTransDiagram.Common;
 
-namespace WebApp.Domain.Models.Transactions
+namespace sharpTransDiagram.Models.Transactions
 {
     public class StockTrans : Transaction
     {
+        public double Price { get; set; }
+
         public StockTrans(string Attribute) : base(Constants.Item, Attribute)
         {
         }
-
-        public double Price { get; set; }
 
         public double GetAmount()
         {
