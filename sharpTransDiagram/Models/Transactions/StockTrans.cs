@@ -6,7 +6,7 @@ namespace sharpTransDiagram.Models.Transactions
     {
         public double Price { get; set; }
 
-        public StockTrans(string Attribute) : base(Constants.Item, Attribute)
+        public StockTrans(string Attribute) : base(Constants.ItemHub, Attribute)
         {
         }
 

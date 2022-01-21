@@ -11,12 +11,13 @@ namespace sharpTransDiagram.Models
         public int Id { get; set; }
 
         public DateTime Date { get; set; } = new DateTime();
-        public virtual bool Direction { get; set; } = true;
+        public virtual bool Adding { get; set; } = true;
         public double Quantity { get; set; } = 0;
         public int TargetId { get; set; }
         public string Unit { get; set; }
         public string TargetType { get; set; }
         public string TargetAttribute { get; set; }
+        public bool IsPosted { get; set; } = false;
     }
 
     public partial class Transaction
@@ -31,7 +32,8 @@ namespace sharpTransDiagram.Models
 
         public virtual void Post()
         {
-            if (Direction)
+            this.IsPosted = true;
+            if (Adding)
             {
                 UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
             }
@@ -41,8 +43,9 @@ namespace sharpTransDiagram.Models
             }
         }
 
-        private void UpdateTarget(double quantity, string targetType, string targetAttribute, int targetId)
+        public virtual void UpdateTarget(double quantity, string targetType, string targetAttribute, int targetId)
         {
+            this.IsPosted = false;
             var targetList = TheDummy.GetList<Target>(targetType);
 
             int index = targetList.FindIndex(t => t.GetTargetId() == targetId);
@@ -51,7 +54,7 @@ namespace sharpTransDiagram.Models
 
         public void UnPost()
         {
-            if (!Direction)
+            if (!Adding)
             {
                 UpdateTarget(Quantity, TargetType, TargetAttribute, TargetId);
             }

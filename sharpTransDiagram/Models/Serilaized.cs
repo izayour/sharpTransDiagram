@@ -1,0 +1,13 @@
+﻿using sharpTransDiagram.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace sharpTransDiagram
+{
+    public class Serilaized : Item
+    {
+        public Serial Serial { get; set; }
+    }
+}

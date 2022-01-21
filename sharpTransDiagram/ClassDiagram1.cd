@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="sharpTransDiagram.SO" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAEAAAACAAA=</HashCode>
+      <FileName>Models\CoumpundTransactions\SO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Vendor" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Vendor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Serilaized">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serilaized.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.NonSerialized" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NonSerialized.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Serial" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.shippingLocations" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>shippingLocations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.AccountTrans" Collapsed="true">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\AccountTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.StockHubTrans">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\StockHubTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.StockTrans" Collapsed="true">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\StockTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.CompundTransactions.PO" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\CoumpundTransactions\PO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Item">
+    <Position X="5.25" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.CompoundTransaction" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAAAAAAAAACEAAQgABAAAgAAABAAA=</HashCode>
+      <FileName>Models\CompoundTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Customer" Collapsed="true">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transaction" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQgAAAAAAAAAICAACAAACAAAAgABAAAAgAABAAA=</HashCode>
+      <FileName>Models\Transaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Target" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Target.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Hub" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Hub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.ItemHub" Collapsed="true">
+    <Position X="5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAgAAAABABAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\ItemHub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

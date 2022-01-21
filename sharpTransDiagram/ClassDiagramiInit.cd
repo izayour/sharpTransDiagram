@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="sharpTransDiagram.Models.CompundTransactions.PO" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\CoumpundTransactions\PO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.SO" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\CoumpundTransactions\SO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Vendor" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Vendor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.CompoundTransaction" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAAAAAAAAACEAAQgABAAAgAAABAAA=</HashCode>
+      <FileName>Models\CompoundTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Customer" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAgAABABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Hub" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Hub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Item" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAAAAAAAAAAAAAAAAABABAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.ItemEntry" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ItemEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Target" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Target.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transaction" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQgAAAAAAAAAICAACAAACAAAAgABAAAAgAABAAA=</HashCode>
+      <FileName>Models\Transaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.AccountTrans" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\AccountTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.StockHubTrans" Collapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\StockHubTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sharpTransDiagram.Models.Transactions.StockTrans" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transactions\StockTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

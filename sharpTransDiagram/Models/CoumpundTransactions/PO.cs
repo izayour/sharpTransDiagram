@@ -7,18 +7,16 @@ namespace sharpTransDiagram.Models.CompundTransactions
 {
     public class PO : CompoundTransaction
     {
-        public int HubId { get; set; }
-
         public PO(DummyData theDummy) : base(theDummy)
         {
         }
 
-        public void CreateTransForItem(List<ItemEntry> itemEntries)
+        public void CreateTransForItem(List<ItemOrder> itemEntries)
         {
             itemEntries.ForEach(e =>
             {
-                StockHubTrans sht1 = new StockHubTrans(Constants.OnPo)
-                { Id = 1, HubId = this.HubId, Direction = true, TargetId = e.ItemId, Quantity = e.Qty, Price = e.Price, TheDummy = this.TheDummy };
+                StockTrans sht1 = new StockTrans(Constants.OnPo)
+                { Id = 1, Adding = true, TargetId = e.ItemHubId, Quantity = e.Qty, Price = e.Price, TheDummy = this.TheDummy };
                 this.Total += sht1.GetAmount();
 
                 this.LeafTransList.Add(sht1);
@@ -27,7 +25,7 @@ namespace sharpTransDiagram.Models.CompundTransactions
 
         public void CreateAccountTransaction()
         {
-            AccountTrans act1 = new AccountTrans(Constants.Vendor, Constants.OnPo) { Id = 1, Direction = true, TargetId = this.TargetId, Quantity = this.Total, TheDummy = this.TheDummy };
+            AccountTrans act1 = new AccountTrans(Constants.Vendor, Constants.OnPo) { Id = 1, Adding = true, TargetId = this.TargetId, Quantity = this.Total, TheDummy = this.TheDummy };
             LeafTransList.Add(act1);
         }
 

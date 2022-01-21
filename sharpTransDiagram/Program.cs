@@ -11,48 +11,66 @@ namespace sharpTransDiagram
         private static void Main(string[] args)
         {
             DummyData myDummy = new();
-            List<ItemEntry> itemEntries = new();
-            itemEntries.Add(new() { Id = 1, ItemId = 1, Price = 10, Qty = 1 });
-            itemEntries.Add(new() { Id = 2, ItemId = 2, Price = 20, Qty = 1 });
-
-            PO myPO = new PO(myDummy)
-            {
-                Id = 1,
-                Date = DateTime.Now,
-                TargetId = 1,
-                HubId = 1
-            };
-
-            myPO.CreateTransForItem(itemEntries);
-            myPO.CreateAccountTransaction();
-
-            Console.WriteLine("Posting PO\n");
-
-            myPO.Post();
-
-            Console.WriteLine("UnPosting PO\n");
-
-            myPO.UnPost();
-
-            Console.WriteLine("****************************************************************\n");
+            List<ItemOrder> itemEntries = new();
+            itemEntries.Add(new() { ItemHubId = 1, Qty = 2, Price = 10 }); // 3 available on hand
+            itemEntries.Add(new() { ItemHubId = 2, Qty = 3, Price = 20 }); // 1 available on hand
 
             SO mySO = new SO(myDummy)
             {
                 Id = 1,
                 Date = DateTime.Now,
                 TargetId = 1,
-                HubId = 1
+                HubId = 1,
+                ItemOrders = itemEntries,
+                ShippingMethod = ShippingMethods.ShippingMethod1,
+                ShippingInfoId = 1
             };
-            mySO.CreateTransForItem(itemEntries);
+            mySO.CreateTransForItem();
             mySO.CreateAccountTransaction();
 
-            Console.WriteLine("Posting SO\n");
+            SO mySO2 = new SO(myDummy)
+            {
+                Id = 1,
+                Date = DateTime.Now,
+                TargetId = 1,
+                HubId = 1,
+                ItemOrders = itemEntries
+            };
+
+            Console.WriteLine("Posting/Creating SO\n");
 
             mySO.Post();
+            Console.WriteLine("SO Status: " + mySO.GetState() + "\n");
 
-            Console.WriteLine("UnPosting SO\n");
+            Console.WriteLine("****************************************************************\n");
 
-            mySO.UnPost();
+            mySO.Fulfill(mySO.ItemOrders[0], 1);
+            mySO.Fulfill(mySO.ItemOrders[0], 2);
+            mySO.Fulfill(mySO.ItemOrders[1], 1);
+
+            myDummy.Serials.ForEach(s => Console.WriteLine("SerialNo: " + s.SerialNo + ", Available: " + s.IsAvaialable)
+            );
+            Console.WriteLine("\ntotal: " + mySO.Total + " Fulfilled: " + mySO.FulfillTotal);
+            Console.WriteLine("\nSO Status: " + mySO.GetState() + "\n");
+
+            //Console.WriteLine("creating So2");
+            //mySO2.CreateTransForItem();
+            //mySO2.CreateAccountTransaction();
+            //mySO2.Post();
+
+            //mySO.Void();
+            Console.WriteLine("****************************************************************\n");
+
+            mySO.ShipPickUp();
+            Console.WriteLine("SO Status: " + mySO.GetState() + "\n");
+
+            //Console.WriteLine("****************************************************************\n");
+            //mySO2.FulfillAll();
+            //myDummy.Serials.ForEach(s => Console.WriteLine("SerialNo: " + s.SerialNo + ", Available: " + s.IsAvaialable)
+            //);
+            //Console.WriteLine("total: " + mySO2.Total + " Fulfilled: " + mySO2.FulfillTotal);
+            //Console.WriteLine("SO Status: " + mySO2.GetState() + "\n");
+            //mySO2.ShipPickUp();
         }
     }
 }

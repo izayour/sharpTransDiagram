@@ -28,7 +28,13 @@ namespace sharpTransDiagram.Models
 
         public virtual void Post()
         {
-            this.LeafTransList.ForEach(lt => lt.Post());
+            this.LeafTransList.ForEach(lt =>
+            {
+                if (!lt.IsPosted)
+                {
+                    lt.Post();
+                }
+            });
         }
 
         public virtual void UnPost()
